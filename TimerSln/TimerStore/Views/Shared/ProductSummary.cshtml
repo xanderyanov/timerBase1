@@ -1,0 +1,16 @@
+﻿@model Product
+
+<div>
+    <h3>@Model.Name</h3>
+    <p>Описание: @Model.Description</p>
+    <p>Новинка: @Model.Favourite</p>
+    <p>Пол: @Model.Gender</p>
+    <p>Тип механизма: @Model.MechanismType</p>
+    <p>Материал корпуса: @Model.CaseMaterial</p>
+    <p>Браслет: @Model.wristletType</p>
+    <p>Категория: @Model.Category %</p>
+    <p>Производитель: @Model.BrandName %</p>
+    <p>Остаток на складе: @Model.totalCount %</p>
+    <p>Скидка: @Model.Discount %</p>
+    <h4>@Model.Price.ToString("c")</h4>
+</div>

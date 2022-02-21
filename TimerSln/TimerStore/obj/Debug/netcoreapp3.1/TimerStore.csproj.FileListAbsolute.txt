@@ -63,3 +63,5 @@ D:\timerBase1\TimerSln\TimerStore\obj\Debug\netcoreapp3.1\TimerStore.csproj.Asse
 D:\timerBase1\TimerSln\TimerStore\obj\Debug\netcoreapp3.1\TimerStore.GeneratedMSBuildEditorConfig.editorconfig
 D:\timerBase1\TimerSln\TimerStore\obj\Debug\netcoreapp3.1\TimerStore.csproj.CoreCompileInputs.cache
 D:\timerBase1\TimerSln\TimerStore\obj\Debug\netcoreapp3.1\TimerStore.genruntimeconfig.cache
+D:\timerBase1\TimerSln\TimerStore\bin\Debug\netcoreapp3.1\libman.json
+D:\timerBase1\TimerSln\TimerStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ProductSummary.cshtml.g.cs
