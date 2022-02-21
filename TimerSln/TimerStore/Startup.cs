@@ -38,6 +38,7 @@ namespace TimerStore
             app.UseEndpoints(endpoints => {
                 endpoints.MapDefaultControllerRoute();
             });
+            SeedData.EnsurePopulated(app);
         }
     }
 }

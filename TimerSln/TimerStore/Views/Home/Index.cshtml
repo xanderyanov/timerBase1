@@ -1,1 +1,18 @@
-﻿<h4>Welcome to TimerStore</h4>
+﻿@model IQueryable<Product>
+
+@foreach (var p in Model) {
+    <div>
+        <h3>@p.Name</h3>
+        <p>Описание: @p.Description</p>
+        <p>Новинка: @p.Favourite</p>
+        <p>Пол: @p.Gender</p>
+        <p>Тип механизма: @p.MechanismType</p>
+        <p>Материал корпуса: @p.CaseMaterial</p>
+        <p>Браслет: @p.wristletType</p>
+        <p>Категория: @p.Category %</p>
+        <p>Производитель: @p.BrandName %</p>
+        <p>Остаток на складе: @p.totalCount %</p>
+        <p>Скидка: @p.Discount %</p>
+        <h4>@p.Price.ToString("c")</h4>
+    </div>
+}
