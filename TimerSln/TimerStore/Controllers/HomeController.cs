@@ -36,14 +36,7 @@ namespace TimerStore.Controllers
             return View(model);
         }
 
-        //public ViewResult Index(int productPage = 1)
-        //=> View(repository.Products
-        //    .OrderBy(p => p.ProductID)
-        //    .Skip((productPage - 1) * PageSize)
-        //    .Take(PageSize));
 
-
-        //public IActionResult Index() => View(repository.Products);
 
     }
 }
