@@ -1,5 +1,4 @@
-﻿@model ProductsListViewModel
-@*@model IQueryable<Product>*@
+﻿@model (IQueryable<Product> Products, PagingInfo PagingInfo)
 
 <div class="row">
     @foreach (var p in Model.Products) {

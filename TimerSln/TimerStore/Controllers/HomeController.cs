@@ -19,19 +19,21 @@ namespace TimerStore.Controllers
 
         public ViewResult Index(int productPage = 1)
         {
-            var model = new ProductsListViewModel
+            IQueryable<Product> Products = repository.Products
+              .OrderBy(p => p.ProductID)
+              .Skip((productPage - 1) * PageSize)
+              .Take(PageSize);
+
+            var brandNames = repository.Products.Select(x => x.BrandName).ToList();
+
+            PagingInfo PagingInfo = new PagingInfo
             {
-                Products = repository.Products
-                  .OrderBy(p => p.ProductID)
-                  .Skip((productPage - 1) * PageSize)
-                  .Take(PageSize),
-                PagingInfo = new PagingInfo
-                {
-                    CurrentPage = productPage,
-                    ItemsPerPage = PageSize,
-                    TotalItems = repository.Products.Count()
-                }
+                CurrentPage = productPage,
+                ItemsPerPage = PageSize,
+                TotalItems = repository.Products.Count()
             };
+
+            var model = (Products, PagingInfo);
             
             return View(model);
         }
