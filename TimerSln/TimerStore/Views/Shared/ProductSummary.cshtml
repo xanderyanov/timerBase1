@@ -1,16 +1,27 @@
 ﻿@model Product
 
-<div>
+@{ 
+    decimal newPrice = @Model.Price - (@Model.Price * Convert.ToDecimal(@Model.Discount) / 100);
+}
+<div class="col-3 mb-3">
     <h3>@Model.Name</h3>
-    <p>Описание: @Model.Description</p>
-    <p>Новинка: @Model.Favourite</p>
-    <p>Пол: @Model.Gender</p>
-    <p>Тип механизма: @Model.MechanismType</p>
-    <p>Материал корпуса: @Model.CaseMaterial</p>
-    <p>Браслет: @Model.wristletType</p>
-    <p>Категория: @Model.Category %</p>
-    <p>Производитель: @Model.BrandName %</p>
-    <p>Остаток на складе: @Model.totalCount %</p>
-    <p>Скидка: @Model.Discount %</p>
-    <h4>@Model.Price.ToString("c")</h4>
+    <div class="product_img">
+        <div class="product_imgInner" style="background-image: url(/img/@Model.ProductImg)"></div>
+    </div>
+    @*<p><img src="/img/@Model.ProductImg" alt="Alternate Text" /></p>*@
+    <p><strong>Описание:</strong> @Model.Description</p>
+    <p><strong>Новинка:</strong> @Model.Favourite</p>
+    <p><strong>Пол:</strong> @Model.Gender</p>
+    <p><strong>Тип механизма:</strong> @Model.MechanismType</p>
+    <p><strong>Материал корпуса:</strong> @Model.CaseMaterial</p>
+    <p><strong>Браслет:</strong> @Model.wristletType</p>
+    <p><strong>Категория:</strong> @Model.Category</p>
+    <p><strong>Производитель:</strong> @Model.BrandName</p>
+    <p><strong>Остаток на складе:</strong> @Model.totalCount</p>
+    <p><strong>Скидка:</strong> @Model.Discount %</p>
+    <h3>@Model.Price.ToString("c")</h3>
+
+    @if(@Model.Discount > 0) { 
+        <h4><strong>Новая цена со скидкой:</strong> @newPrice.ToString("c")</h4>
+    }
 </div>
