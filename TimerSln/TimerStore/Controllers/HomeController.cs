@@ -17,11 +17,12 @@ namespace TimerStore.Controllers
             repository = repo;
         }
 
-        public ViewResult Index(int productPage = 1)
+        public ViewResult Index(string category, int productPage = 1)
         {
             var model = new ProductsListViewModel
             {
                 Products = repository.Products
+                  .Where(p => category == null || p.BrandName == category)
                   .OrderBy(p => p.ProductID)
                   .Skip((productPage - 1) * PageSize)
                   .Take(PageSize),

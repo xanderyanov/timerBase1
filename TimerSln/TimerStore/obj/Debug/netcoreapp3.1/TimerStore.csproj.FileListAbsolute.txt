@@ -65,3 +65,4 @@ D:\timerBase1\TimerSln\TimerStore\obj\Debug\netcoreapp3.1\TimerStore.csproj.Core
 D:\timerBase1\TimerSln\TimerStore\obj\Debug\netcoreapp3.1\TimerStore.genruntimeconfig.cache
 D:\timerBase1\TimerSln\TimerStore\bin\Debug\netcoreapp3.1\libman.json
 D:\timerBase1\TimerSln\TimerStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ProductSummary.cshtml.g.cs
+D:\timerBase1\TimerSln\TimerStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\NavigationMenu\Default.cshtml.g.cs

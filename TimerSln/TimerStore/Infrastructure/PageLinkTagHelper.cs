@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using TimerStore.Models.ViewModels;
+using System.Collections.Generic;
+
 namespace TimerStore.Infrastructure
 {
     [HtmlTargetElement("div", Attributes = "page-model")]
@@ -22,6 +24,11 @@ namespace TimerStore.Infrastructure
         
         public string PageAction { get; set; }
 
+        [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")]
+        public Dictionary<string, object> PageUrlValues { get; set; }
+            = new Dictionary<string, object>();
+
+
         public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; }
         public string PageClassNormal { get; set; }
@@ -36,6 +43,10 @@ namespace TimerStore.Infrastructure
             for (int i = 1; i <= PageModel.TotalPages; i++)
             {
                 TagBuilder tag = new TagBuilder("a");
+
+                PageUrlValues["productPage"] = i;
+                tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
+
                 tag.Attributes["href"] = urlHelper.Action(PageAction,
                    new { productPage = i });
                 if (PageClassesEnabled)
